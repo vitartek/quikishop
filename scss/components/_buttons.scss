@@ -1,0 +1,64 @@
+@use "../abstrats/index" as *;
+
+
+@include coment("open", "BUTTONS");
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  text-transform: $button-text-transform;
+  font-weight: $button-font-weight;
+  padding: $button-padding;
+  border: $button-border;
+  border-radius: $button-border-radius;
+  transition: 275ms ease;
+
+  color: $button-primary-background;
+  background: transparent;
+
+  &[data-type="accent"] {
+    background-color: $button-accent-background;
+    color: $button-accent-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-accent-background-hover;
+      color: $button-accent-color-hover;
+    }
+  }
+
+  &[data-type="primary"] {
+    background-color: $button-primary-background;
+    color: $button-primary-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-primary-background-hover;
+      color: $button-primary-color-hover;
+    }
+  }
+}
+
+
+// .btn-primary {
+//   background-color: var(--primary-500);
+//   color: var(--neutral-000);
+// }
+
+// .btn.btn-outline-primary {
+//   background-color: transparent;
+//   color: var(--primary-500);
+//   border: 2px solid var(--primary-500);
+
+//   &:hover, &:active {
+//       background-color: var(--primary-500);
+//       color: var(--neutral-000);
+//   }
+// }
+
+
+@include coment("close", "buttons");
