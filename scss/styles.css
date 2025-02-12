@@ -139,8 +139,6 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
-/* --- Definir las variables CSS --- */
-/* Variables para el modo Claro (por defecto) */
 /* --- Aplicar los estilos --- */
 /* Modo Claro */
 @keyframes fadeInUp {
@@ -151,6 +149,16 @@ textarea:not([rows]) {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translatex(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatex(0);
   }
 }
 @keyframes slideUp {
@@ -211,7 +219,6 @@ footer {
   color: white;
 }
 
-/* Usando prefers-color-scheme */
 h1, h2, h3, h4 {
   color: var(--primary-400);
 }
@@ -239,21 +246,17 @@ header nav .nav-links {
 header nav .nav-links li {
   margin-left: 30px;
 }
+header nav .nav-links li:hover a {
+  color: var(--primary-500);
+}
 header nav .nav-links a {
   color: #333;
   text-decoration: none;
   font-size: 16px;
   position: relative;
   color: var(--text-color-light);
-}
-header nav .nav-links a:hover::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  color: var(--link-hover-color-light);
+  transition: 0.15s ease all;
+  position: relative;
 }
 header nav button {
   display: none;
@@ -328,8 +331,12 @@ header .btn-group {
   display: grid;
   justify-content: space-between;
   gap: 4rem;
+  animation: fadeInLeft ease-out;
+  animation-timeline: view(); /*vie2() idica solo la pasa cuando el elemento es visible en la pantalla*/
+  animation-range: entry 0% cover 30%;
 }
 .beneficios .heading {
+  animation: slideUp 1s ease-out;
   margin-bottom: 4rem;
 }
 .beneficios .benefit:not(:last-child) {
@@ -337,7 +344,6 @@ header .btn-group {
 }
 .beneficios .card-benefit {
   border-left: 3px solid var(--primary-500);
-  animation: fadeInUp 2s ease-out forwards;
   padding: 0 1.5rem;
   display: flex;
   flex-flow: column nowrap;
@@ -387,6 +393,9 @@ header .btn-group {
   background-color: #f9f9f9;
   padding: 60px 20px;
   text-align: center;
+  animation: fadeInLeft ease-out;
+  animation-timeline: view(); /*vie2() idica solo la pasa cuando el elemento es visible en la pantalla*/
+  animation-range: entry 0% cover 30%;
 }
 .marcas .heading {
   margin-bottom: 4rem;
@@ -414,6 +423,9 @@ header .btn-group {
 .testimonios {
   padding: 4em 0;
   background-color: #f9f9f9;
+  animation: fadeInLeft ease-out;
+  animation-timeline: view(); /*vie2() idica solo la pasa cuando el elemento es visible en la pantalla*/
+  animation-range: entry 0% cover 30%;
 }
 .testimonios .heading {
   margin: 0 auto;
@@ -474,6 +486,11 @@ header .btn-group {
 }
 
 /* Formulario de contacto */
+.contacto {
+  animation: fadeInLeft ease-out;
+  animation-timeline: view(); /*vie2() idica solo la pasa cuando el elemento es visible en la pantalla*/
+  animation-range: entry 0% cover 30%;
+}
 .contacto .container {
   position: relative;
   width: 100%;
@@ -840,19 +857,19 @@ footer p {
 }
 .btn[data-type=accent] {
   background-color: var(--accent-400);
-  color: var(--neutral-100);
+  color: var(--neutral-000);
 }
 .btn[data-type=accent]:is(:hover, :focus) {
   background-color: var(--accent-500);
-  color: var(--neutral-100);
+  color: var(--neutral-000);
 }
 .btn[data-type=primary] {
   background-color: var(--primary-500);
-  color: var(--neutral-100);
+  color: var(--neutral-000);
 }
 .btn[data-type=primary]:is(:hover, :focus) {
   background-color: var(--primary-600);
-  color: var(--neutral-100);
+  color: var(--neutral-000);
 }
 
 /* !----------------------------- buttons */

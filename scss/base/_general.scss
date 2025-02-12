@@ -1,33 +1,5 @@
 @use 'sass:map';
 @use '../abstrats/index' as *;
-/* --- Definir las variables CSS --- */
-
-/* Variables para el modo Claro (por defecto) */
-// :root {
-//     --background-color-light: #f4f4f4;
-//     --text-color-light: #333;
-//     --header-background-light: #fff;
-//     --cta-btn-light: #007BFF;
-//     --footer-background-light: #333;
-//     --link-color-light: #007BFF;
-//     --link-hover-color-light: #0056b3;
-
-//     /* Variables para el modo Oscuro */
-//     --background-color-dark: #121212;
-//     --text-color-dark: #e0e0e0;
-//     --header-background-dark: #1f1f1f;
-//     --cta-btn-dark: #3399ff;
-//     --footer-background-dark: #181818;
-//     --link-color-dark: #a0c4ff;
-//     --link-hover-color-dark: #3399ff;
-
-//     /* Otros colores que podrías necesitar */
-//     --form-background-light: #fff;
-//     --form-background-dark: #1f1f1f;
-//     --input-border-light: #ddd;
-//     --input-border-dark: #444;
-//     --input-focus-border: #3399ff;
-// }
 
 /* --- Aplicar los estilos --- */
 
@@ -35,6 +7,10 @@
 @keyframes fadeInUp {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translatex(-200px); }
+    100% { opacity: 1; transform: translatex(0); }
 }
 
 @keyframes slideUp {
@@ -45,6 +21,12 @@
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+@mixin effect-appear($showMe: 25%) {
+  animation: fadeInLeft ease-out;
+  animation-timeline: view(); /*vie2() idica solo la pasa cuando el elemento es visible en la pantalla*/
+  animation-range: entry 0% cover $showMe;
 }
 
 body {
@@ -79,55 +61,6 @@ footer {
     color: white;
 }
 
-/* Usando prefers-color-scheme */
-// @media (prefers-color-scheme: dark) {
-//     body {
-//         background-color: var(--background-color-dark);
-//         color: var(--text-color-dark);
-//     }
-
-//     header {
-//         background-color: var(--header-background-dark);
-//     }
-
-//     .cta-btn {
-//         background-color: var(--cta-btn-dark);
-//         color: #fff;
-//     }
-
-//     footer {
-//         background-color: var(--footer-background-dark);
-//         color: white;
-//     }
-
-//     h1, h2, h3 {
-//         color: var(--link-color-dark);
-//     }
-
-//     nav .nav-links a {
-//         color: var(--text-color-dark);
-//     }
-
-//     nav .nav-links a:hover {
-//         color: var(--link-hover-color-dark);
-//     }
-
-//     .contacto form {
-//         background-color: var(--form-background-dark);
-//         color: var(--text-color-dark);
-//     }
-
-//     .contacto input, .contacto textarea {
-//         background-color: var(--form-background-dark);
-//         border: 1px solid var(--input-border-dark);
-//         color: var(--text-color-dark);
-//     }
-
-//     .contacto input:focus, .contacto textarea:focus {
-//         border-color: var(--input-focus-border);
-//     }
-// }
-
 h1, h2, h3, h4 {
     color: $color-text-interactive-default;
 }
@@ -146,14 +79,11 @@ header {
         display: flex;
         // justify-content: space-between;
         align-items: center;
-    
+
         .logo {
             img {
                 width: 10rem;
                 height: auto;
-                // aspect-ratio: 16 / 9;
-                // object-fit: contain;
-                // border: 2px solid red;
                 transition: color 0.3s;
             }
         }
@@ -165,6 +95,11 @@ header {
     
             li {
                 margin-left: 30px;
+                &:hover {
+                  a {
+                    color: var(--primary-500);
+                  }
+                }
             }
             a {
                 color: #333;
@@ -172,16 +107,8 @@ header {
                 font-size: 16px;
                 position: relative;
                 color: var(--text-color-light);
-    
-                &:hover::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -5px;
-                    left: 0;
-                    width: 100%;
-                    height: 2px;
-                    color: var(--link-hover-color-light);
-                }
+                transition: .15s ease all;
+                position: relative;
             }
         }
     
@@ -278,13 +205,17 @@ header {
 .beneficios {
     background-color: #fff;
     padding-bottom: 4rem;
+    
     .beneficios-container {
         display: grid;
         justify-content: space-between;
         gap: 4rem;
+        @include effect-appear(30%);
     }
 
+
     .heading {
+        animation: slideUp 1s ease-out;
         margin-bottom: 4rem;
     }
 
@@ -294,7 +225,7 @@ header {
 
     .card-benefit {
         border-left: 3px solid var(--primary-500);
-        animation: fadeInUp 2s ease-out forwards;
+        // animation: fadeInUp 2s ease-out forwards;
         padding: 0 1.5rem;
 
         display: flex;
@@ -354,6 +285,8 @@ header {
     padding: 60px 20px;
     text-align: center;
 
+    @include effect-appear(30%);
+
     .heading {
         margin-bottom: 4rem;
     }
@@ -384,6 +317,7 @@ header {
     // background-color: #fff;
     padding: 4em 0;
     background-color: #f9f9f9;
+    @include effect-appear(30%);
 
     .heading {
         margin: 0 auto;
@@ -451,6 +385,7 @@ header {
 
 /* Formulario de contacto */
 .contacto {
+  @include effect-appear(30%);
     .container {
         position: relative;
         width: 100%;

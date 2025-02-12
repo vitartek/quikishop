@@ -43,22 +43,4 @@
   }
 }
 
-
-// .btn-primary {
-//   background-color: var(--primary-500);
-//   color: var(--neutral-000);
-// }
-
-// .btn.btn-outline-primary {
-//   background-color: transparent;
-//   color: var(--primary-500);
-//   border: 2px solid var(--primary-500);
-
-//   &:hover, &:active {
-//       background-color: var(--primary-500);
-//       color: var(--neutral-000);
-//   }
-// }
-
-
 @include coment("close", "buttons");
