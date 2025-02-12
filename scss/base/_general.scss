@@ -349,8 +349,8 @@ header {
     .testimonios-container {
         display: flex;
         padding: 1rem 0;
-        // overflow-x: auto;
-        // gap: 1rem;
+        overflow-x: auto;
+        gap: 1rem;
         @include effect-appear(30%);
     }
 
@@ -396,7 +396,7 @@ header {
         }
     }
 
-    @include screenSize(large) {
+    @include screenSize(medium) {
         .testimonios-container {
             justify-content: space-between;
             overflow-x: initial;

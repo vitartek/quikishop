@@ -459,6 +459,8 @@ header .btn-group {
 .testimonios .testimonios-container {
   display: flex;
   padding: 1rem 0;
+  overflow-x: auto;
+  gap: 1rem;
   animation: fadeInLeft ease-out;
   animation-timeline: view(); /*vie2() idica solo la pasa cuando el elemento es visible en la pantalla*/
   animation-range: entry 0% cover 30%;
@@ -502,7 +504,7 @@ header .btn-group {
   font-size: 18px;
   font-style: italic;
 }
-@media screen and (min-width: 65em) {
+@media screen and (min-width: 45em) {
   .testimonios .testimonios-container {
     justify-content: space-between;
     overflow-x: initial;
