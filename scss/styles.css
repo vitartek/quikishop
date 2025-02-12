@@ -184,7 +184,7 @@ h4 {
 
 .container {
   padding: 0 1rem;
-  max-width: 62, 5rem;
+  max-width: 1600px;
   margin: 0 auto;
 }
 @media screen and (min-width: 65em) {
@@ -228,10 +228,8 @@ header nav {
   align-items: center;
 }
 header nav .logo img {
-  width: clamp(10rem, 30vw, 12rem);
+  width: 10rem;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
   transition: color 0.3s;
 }
 header nav .nav-links {
@@ -430,6 +428,7 @@ header .btn-group {
 }
 .testimonios .testimonio {
   text-align: center;
+  background-color: var(--neutral-000);
   padding: 3rem 1.5rem;
   border-radius: 1rem;
   box-shadow: 10px 10px 15px rgba(133, 133, 133, 0.063);

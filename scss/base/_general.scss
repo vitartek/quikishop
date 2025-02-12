@@ -59,7 +59,8 @@ h4 {
 }
 .container {
     padding: 0 1rem;
-    max-width: 62, 5rem;
+    // max-width: 62, 5rem;
+    max-width: 1600px;
     margin: 0 auto;
     @include screenSize(large) {
         padding: 0 10%;
@@ -148,11 +149,10 @@ header {
     
         .logo {
             img {
-                // font-size: 24px;
-                width: clamp(10rem, 30vw, 12rem);
+                width: 10rem;
                 height: auto;
                 // aspect-ratio: 16 / 9;
-                object-fit: contain;
+                // object-fit: contain;
                 // border: 2px solid red;
                 transition: color 0.3s;
             }
@@ -400,6 +400,7 @@ header {
 
     .testimonio {
         text-align: center;
+        background-color: var(--neutral-000);
         padding: 3rem 1.5rem;
         border-radius: $border-radius-2;
         box-shadow: 10px 10px 15px rgba(133, 133, 133, 0.063);
