@@ -71,7 +71,7 @@ h1, h2, h3, h4 {
 /* Cabecera */
 header {
     // background-color: var(--header-background-light);
-    // padding: 20px 0;
+    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -152,10 +152,10 @@ header {
         gap: 1rem;
     }
     @include screenSize(large) {
+        padding: 20px 0;
         .header-hamburguer {
             display: none;
         }
-    
         nav {
             .nav-links {
                 display: flex;

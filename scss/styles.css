@@ -226,6 +226,7 @@ h1, h2, h3, h4 {
 /* --- Estilos para el Modo Oscuro --- */
 /* Cabecera */
 header {
+  padding: 20px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -294,6 +295,9 @@ header .btn-group {
   gap: 1rem;
 }
 @media screen and (min-width: 65em) {
+  header {
+    padding: 20px 0;
+  }
   header .header-hamburguer {
     display: none;
   }
