@@ -296,7 +296,7 @@ header .btn-group {
 }
 @media screen and (min-width: 65em) {
   header {
-    padding: 20px 0;
+    padding: 0;
   }
   header .header-hamburguer {
     display: none;
